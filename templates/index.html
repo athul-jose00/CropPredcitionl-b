@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Yield Prediction</title>
+</head>
+<body>
+    <h1>Crop Yield Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="state_names">State Names:</label>
+        <input type="text" name="state_names" required><br><br>
+        
+        <label for="district_names">District Names:</label>
+        <input type="text" name="district_names" required><br><br>
+        
+        <label for="crop_names">Crop Names:</label>
+        <input type="text" name="crop_names" required><br><br>
+        
+        <label for="area">Area:</label>
+        <input type="number" name="area" required step="0.01"><br><br>
+        
+        <label for="temperature">Temperature:</label>
+        <input type="number" name="temperature" required step="0.01"><br><br>
+        
+        <label for="wind_speed">Wind Speed:</label>
+        <input type="number" name="wind_speed" required step="0.01"><br><br>
+        
+        <label for="precipitation">Precipitation:</label>
+        <input type="number" name="precipitation" required step="0.01"><br><br>
+        
+        <label for="humidity">Humidity:</label>
+        <input type="number" name="humidity" required step="0.01"><br><br>
+        
+        <label for="N">N (Nitrogen):</label>
+        <input type="number" name="N" required step="0.01"><br><br>
+        
+        <label for="P">P (Phosphorus):</label>
+        <input type="number" name="P" required step="0.01"><br><br>
+        
+        <label for="K">K (Potassium):</label>
+        <input type="number" name="K" required step="0.01"><br><br>
+        
+        <input type="submit" value="Predict Yield">
+    </form>
+    <br>
+    {% if predicted_value %}
+    <h2>Predicted Yield:</h2>
+    <p>{{ predicted_value }}</p>
+    {% endif %}
+</body>
+</html>
